@@ -1,0 +1,97 @@
+
+.gen-navbar{
+    width: 100%;
+    height: 10vh;
+
+}
+.gnbPlcer{
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.gnbLogo{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.gnbLogoDark p{
+    color: aliceblue;
+}
+.gnbLogo p{
+    font-family: font1Bold;
+    font-weight: 900;
+    font-size: 20px;
+}
+.gnbLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gnbLinksDark{
+    color: aliceblue;
+}
+
+.gnbLink{
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.gnbLinksDark .gnbLinkActive::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #ebebeb;
+    left: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    transform:translateX(-50%) ;
+}
+ .gnbLinkActive::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #046733;
+    left: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    transform:translateX(-50%) ;
+}
+.gnbLink p{
+    padding: 0 17px ;
+    transform: .3s ease;
+}
+.gnbBtn{
+    width: fit-content;
+}
+.gnbBtnDark button{
+    width: 120px;
+    height: 45px;
+    border: none;
+    color: #046733 !important;
+    background: aliceblue !important;
+    font-family: font1;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.gnbBtn button{
+    width: 120px;
+    height: 45px;
+    border: none;
+    background: #046733;
+    color: aliceblue;
+    font-family: font1;
+    border-radius: 10px;
+    cursor: pointer;
+
+}

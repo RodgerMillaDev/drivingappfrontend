@@ -1,0 +1,12 @@
+.uploadQuizWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.uploadQuizWrap input{
+    border: 1px solid black;
+    height: 40px;
+}

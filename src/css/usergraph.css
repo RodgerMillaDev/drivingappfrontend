@@ -1,0 +1,36 @@
+.graphTop {
+  width: 100%;   /* increase this */
+  height: calc(100% - 240px);  /* increase this */
+  display: flex;
+  justify-content: start;
+  align-items: start;  
+  flex-direction: column;
+  margin: 20px 0;
+  border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.graphTop p{
+    font-size: 1rem;
+    padding: 20px ;
+}
+.graphBtm{
+    height: 200px;
+    width: 100%;
+    background: var(--pri-color);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graphBtm button{
+    width: 100px;
+    height: 40px;
+    background: var(--pri2-color);
+    color: black;
+    font-family: font1;
+    border: none;
+    cursor: pointer;
+}

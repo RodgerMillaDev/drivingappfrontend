@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "font1";
+  src: url("./media/font1/GoogleSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "font1";
+  src: url("./media/font1/GoogleSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root{
+  --pri-color:#005064;
+  --pri2-color:#F9BA04;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.swal2-title{
+    font-size: 2rem;
+    font-family: font1;
+    font-weight: 400;
+    letter-spacing: -1px;
 }
-
-.App-link {
-  color: #61dafb;
+.swal2-popup{
+    font-family: font1;
 }
+.swal2-cancel{
+    background: #00752F;
+    color: aliceblue;
+    /* border: 1px solid #00752F; */
+}
+.swal2-cancel{
+    background: #00752F;
+    color: aliceblue;
+    border: none;
+    font-family: font1;
+}
+.swal2-confirm:focus{
+    outline: none;
+}
+.swal2-confirm:hover{
+    color: #00752F;
+    background: none;
+}
+.swal2-confirm{
+    background: none;
+        font-family: font1;
+        
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    color: #00752F;
+    border: 1px solid #00752F;
+}
+body{
+  font-family: font1;
 }

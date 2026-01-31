@@ -1,0 +1,170 @@
+.Burner{
+    width: 70%;
+    margin: 0 auto;
+    height: fit-content;
+    padding: 50px 0;
+    margin-top: 10vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #044723, #079b4c);
+}
+.burnerPlacer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    color: aliceblue;
+}
+.topSpan{
+    background: rgba(240, 248, 255, 0.2);
+    padding: 10px ;
+    border-radius: 10px;
+
+}
+.midSpan{
+    font-size: 2rem;
+    font-family: font1Bold;
+    width: 80%;
+    margin: 15px 0;
+    text-align: center;
+}
+.btmSpan{
+    text-align: center;
+    width: 90;
+    margin: 0 auto;
+}
+
+.burnerPlacer button{
+    color: #044723;
+    background: aliceblue;
+    border: none;
+    border-radius: 10px;
+    height: 45px; width: 100px;
+    font-family: font1;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7vh;
+}
+.footerPlacer{
+    width: 90%;
+    height: fit-content;
+}
+.footerTop{
+    height: fit-content;
+    display: flex;
+    margin-bottom: 50px;
+    flex-direction: row;
+
+}
+
+.fLogo{
+    width: 20%;
+}
+
+.fLogo h3{
+    font-size: 2rem;
+}
+.footerLinks{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+.flmLinks p:hover{
+
+    margin-left: 10px;
+    opacity: 1;
+        color: #079b4c;
+
+}
+.flLeft,.flRight{
+    width: 50%;
+    height: 100%;
+}
+.fLinkTitle{
+    margin-bottom: 20px;
+}
+.fLinkTitle p{
+    transition: .3s ease;
+    font-weight: 900;
+    color: #044723;
+}
+.flmLinks p,
+.flmLinks p
+{
+     margin-bottom: 10px;
+     opacity: .7;
+     cursor: pointer;
+         transition: .3s ease;
+
+}
+.footerBtm{
+    width: 100%;
+    border-top: 1px solid #0447233d;
+    height:70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerBtm span{
+    font-size: .8rem;
+    text-align: center;
+}
+.footerNewsletter{
+    height: 100%;
+    width: 30%;
+
+}
+
+.fnInputWrap{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #0447236c;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.finputBtn {
+    width: 70px;
+    height: 100%;
+    background: #044723;
+    color: aliceblue;
+    cursor: pointer;
+    font-family: font1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finput{
+    width: calc(100% - 70px);
+    height: 100%;
+    overflow: hidden;
+}
+.finput input{
+    padding-left: 10px;
+    height: 100%;
+    font-family: font1;
+    color: #044723;
+    font-size: .9rem;
+    font-family: font1;
+}
+.ltItron{
+    opacity: .7;
+}

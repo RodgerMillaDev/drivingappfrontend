@@ -1,0 +1,32 @@
+.completeWrap p{
+    font-size: 2rem;
+    
+}
+.completeWrap span{
+    font-size: 1.2rem;
+    margin: 20px 0;
+    
+}
+.completeWrap{
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.completeWrap button{
+   width: 120px;
+   height: 50px;
+   border-radius: 10px;
+   cursor: pointer;
+   border: none;
+   font-family: font1;
+   background: var(--pri-color);
+   color: aliceblue;
+}
+.completeWrap img{
+    width: 200px;
+    margin-bottom: 20px;
+}

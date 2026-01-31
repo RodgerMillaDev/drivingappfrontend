@@ -1,0 +1,180 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+input{
+ border: none;
+ background: none;
+ font-family: font1;
+ font-size: 1rem;
+}
+input:focus{
+    outline: none;
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 3.5rem;
+}
+h3{
+    font-size: 2.5rem;
+}
+h4{
+    font-size: 1.2rem;
+}
+h5{
+    font-size: 1rem;
+}
+p{
+    font-size: 1rem;
+}
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    background: #F0F7F7;
+    justify-content: center;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.dcTop{
+    background: linear-gradient(45deg, #044723, #079b4c);
+    height: 450px;
+}
+.dcTopIntro{
+    height: calc(450px - 10vh);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+.dcTopIntro h1{
+  letter-spacing: -2px;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 80px;
+  text-align: center;
+}
+.dcTopIntro p{
+    font-size: 1rem;
+    margin-top: 30px;
+}
+.dcBtm{
+    height: fit-content;
+    width: 80%;
+    margin: 0 auto;
+    
+
+}
+.dcBtmMiniIntro {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+
+}
+.progressBarWrap{
+    width: 100%;
+    height: 20px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+}
+.progressBar {
+    position: absolute;
+    transition: 1s ease;
+    width: 0%;
+    border-radius: 30px;
+    height: 100%;
+    background: linear-gradient(45deg, #044723, #079b4c);
+
+
+}
+.dcBtmMiniIntro p{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.dcModules {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.dcModuleCard {
+    height: 300px;
+    background: url(../media/pexels-element5-1051071.jpg)no-repeat center/cover;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.dcModuleCard2{
+        background: url(../media/pexels-kindelmedia-7715189.jpg)no-repeat center/cover;
+
+}
+.dcModuleCard3{
+            background: url(../media/pexels-mike-van-schoonderwalt-1884800-5505120.jpg)no-repeat center/cover;
+
+}
+.dcModuleCard4{
+            background: url(../media/pexels-jordan-besson-2051439001-29271763.jpg)no-repeat center/cover;
+
+}
+.dcModuleCard5{
+            background: url(../media/pexels-tim-samuel-5835364.jpg)no-repeat center/cover;
+
+}
+.dcmcDesc{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    padding-bottom: 20px;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0),rgb(0, 0, 0));
+}
+
+.dcmcBtm{
+    height: 50px;
+    width: 90%;
+    margin: 0 auto;
+}
+.dcmcBtm button{
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    font-family: font1;
+    border: none;
+    border-radius: 10px;
+    color: black;
+}
+.dcmcTop{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 auto;
+    justify-content: center;
+    height: calc(100% - 50px);
+}
+.dcmcTop span{
+  color: aliceblue;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+.dcmcTop p {
+    color: aliceblue;
+    opacity: .8;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;     /* number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

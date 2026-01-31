@@ -1,0 +1,241 @@
+*{
+    margin:0;
+    padding: 0;
+}
+@font-face {
+    font-family: font1;
+    src: url(../media/font1/GoogleSans-Regular.ttf);
+}
+@font-face {
+    font-family: font1Bold;
+    src: url(../media/font1/GoogleSans-Bold.ttf);
+}
+input{
+    border: none;
+ background: none;
+ font-family: font1;
+ font-size: 1rem;
+}
+body{
+    font-family: font1;
+}
+input:focus{
+    outline: none;
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 3.5rem;
+}
+h3{
+    font-size: 2.5rem;
+}
+h4{
+    font-size: 1.2rem;
+}
+h5{
+    font-size: 1rem;
+}
+p{
+    font-size: .9rem;
+}
+.authPage{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: aliceblue;
+
+}
+.authLeft{
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    font-family: font1;
+    position: relative;
+
+}
+.authLeft img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+
+}
+.authLeftWrapper{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+.authMiniCont{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    flex-direction: column;
+    color: aliceblue;
+}
+.dots{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    height: 6px;
+
+}
+.ld{
+    width: 100px;
+    height: 10px;
+    border-radius: 10px;
+        background: aliceblue;
+
+}
+.sd{
+    width: 10px;
+    height: 10px;
+    background: rgba(240, 248, 255, 0.486);
+    border-radius: 10px;
+}
+.sd:nth-child(2){
+    margin: 0 10px !important;
+
+}
+.authMiniCont span{
+  font-family: font1Bold;
+  font-size: 4rem;
+  letter-spacing: -2px;
+}
+.authMiniCont p{
+    opacity: .7;
+    margin: 10px 0px 30px 0;
+
+}
+.authRight{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: font1;
+    align-items: center;
+}
+.authRightWrap{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.authLog,.authSign{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.authIntro span{
+    font-size: 1.7rem;
+    font-family: font1Bold;
+}
+.authIntro h4{
+}
+.authIntro p {
+        margin-top: 10px;
+
+}
+.authContWrap{
+    width: 100%;
+    margin-top: 30px;
+    height: fit-content;
+
+}
+.inputWrap{
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgba(128, 128, 128, 0.2);
+    margin-top: 10px;
+
+
+}
+.inputIcon{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputActWrap{
+    height: 100%;
+    width: calc(100% - 45px);
+}
+.inputActWrap input{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.authBtnWrap{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+
+}
+.authBtnWrap button{
+    width: 100%;
+    cursor: pointer;
+    background: #00752F;
+    border-radius: 5px;
+    height: 100%;
+    border: none;
+    color: aliceblue;
+    font-family: font1;
+}
+.authOpt {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+        margin-top: 20px;
+        display: flex;
+        
+
+}
+
+.authOpt p{
+    color: rgba(0, 0, 0, 0.692);
+}
+.authOpt p:nth-child(2){
+    color: rgba(0, 0, 0, 0.692);
+    cursor: pointer;
+}
+.authOpt span{
+    color: #00752F;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+.inputIcon .faIcon{
+    color: #00752F;
+  font-size: 20px;
+}
