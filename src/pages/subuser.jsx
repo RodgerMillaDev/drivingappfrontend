@@ -73,8 +73,6 @@ const genCertUser = async (file) => {
   }
 };
 
-
-
     function getFormattedDate() {
     const today = new Date();
     const day = String(today.getDate()).padStart(2, '0');
@@ -83,7 +81,6 @@ const genCertUser = async (file) => {
 
     return `${month}/${day}/${year}`;
 }
-
 async function downloadCertificate(userName) {
   const em = signEm.current.value?.trim(); // 👈 check email
   setsubUserName(userName);
@@ -144,9 +141,6 @@ async function downloadCertificate(userName) {
     setSubuserLoader(false);
   }, 500);
 }
-
-
-
 
 function getCertNumber() {
     // Use last 6 digits of timestamp
