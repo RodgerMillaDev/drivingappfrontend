@@ -30,6 +30,9 @@
     height: 40px;
     background: var(--pri2-color);
     color: black;
+        font-size: 1rem;
+    font-size: 1rem;
+
     font-family: font1;
     border: none;
     cursor: pointer;

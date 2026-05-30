@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "driving-web-app3"
-  }
+    "default": "driving-web-app3",
+    "client": "ndda-app"
+  },
+  "targets": {},
+  "etags": {}
 }

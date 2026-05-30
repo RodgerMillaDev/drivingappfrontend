@@ -107,7 +107,7 @@ const submit = async () => {
   setSubmitLoader(true);
 
   const isAnswerCorrect = selectedAnswer === quiz.ca;
-  const ansStatus = isAnswerCorrect ? "right" : "wrong";
+  const ansStatus = isAnswerCorrect ? "CORRECT" : "WRONG";
   const isLastQuestion = currentIndex === quizzes.length - 1;
 
   const userRef = doc(db, "Users", userID);
@@ -123,16 +123,26 @@ const submit = async () => {
     completedAt: isLastQuestion ? Date.now() : null,
   });
 
-  await Swal.fire({
-    title: `You got it ${ansStatus}!`,
-    html: `
-      <p class="swalminititle">Correct Answer:</p>
-      <p>${quiz.ca}</p>
-      <p class="swalminititle">Explanation:</p>
-      <p>${quiz.exp}</p>
-    `,
-    confirmButtonText: isLastQuestion ? "View Results" : "Next Question",
-  });
+ const statusColor = isAnswerCorrect ? "#12883d" : "#dc2626"; // green / red
+
+await Swal.fire({
+  title: `
+    Your answer is  <span style="font-weight:700; color:${statusColor}">  ${ansStatus} </span>!
+  `,
+  html: `
+    <p class="swalminititle">Correct Answer</p>
+    <p class="swal-text">${quiz.ca}</p>
+
+    <p class="swalminititle">Explanation</p>
+    <p class="swal-text">${quiz.exp}</p>
+  `,
+  confirmButtonText: isLastQuestion ? "View Results" : "Next Question",
+  customClass: {
+    title: "swal-title",
+    htmlContainer: "swal-container",
+    confirmButton: "swal-btn",
+  },
+});
 
   setIsCorrect(null);
   setSelectedAnswer(null);
@@ -154,7 +164,7 @@ const submit = async () => {
       <div className="testCont">
         <Navbar />
         <div className="Testloading">
-          <Bouncy size="45" speed="1" color="#00752F" />
+          <Bouncy size="45" speed="1" color="#EB1E26" />
         </div>
         <Footer />
       </div>
@@ -177,7 +187,7 @@ const submit = async () => {
 
         <div className="twpQuizWrap">
           <div className="quizQuestion">
-            <span>Question {currentIndex + 1}:</span>
+            <span>Question {currentIndex + 1}</span>
             <p>{quiz.q}</p>
           </div>
 
@@ -206,7 +216,7 @@ const submit = async () => {
                 Submit
               </button>
             ) : (
-                        <Bouncy size="45" speed="1" color="#00752F" />
+                        <Bouncy size="45" speed="1" color="#EB1E26" />
 
             )}
           </div>

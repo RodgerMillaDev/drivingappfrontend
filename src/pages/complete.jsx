@@ -1,15 +1,14 @@
 
 import certImg from "../media/undraw_certificate_cqps.svg"
 import "../css/completetest.css"
-import bgPattern from "../media/Screenshot 2026-01-31 145141.png"
-import certB from "../media/certB-Photoroom.png"
-import newLogo from "../media/authLogo2.png"
+import bgPattern from "../media/redBg1.png"
+import cert from "../media/certificaten.avif"
+import logo from "../media/ndda-logo.png"
 import useFBstore from "../store/fbstore"
 import Swal from "sweetalert2"
 import html2canvas from "html2canvas"
 import { jsPDF } from "jspdf";
 import { useNavigate } from "react-router"
-
 function CompleteTest(){
     const userID = useFBstore((s)=>s.userID)
     const userScore = useFBstore((s)=>s.userScore)
@@ -37,7 +36,7 @@ function getGrade(userScore) {
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
     const year = today.getFullYear();
 
-    return `${day}/${month}/${year}`;
+    return `${month}/${day}/${year}`;
 }
 async function downloadCertificate() {
 
@@ -82,7 +81,7 @@ async function saveToFirebase(file) {
         formData.append("date", getFormattedDate());
         formData.append("grade", getGrade(userScore));
 
-        const url = "https://drvingappbackend.onrender.com/savePdf";
+        const url = "https://drvingappbackend-ix55.onrender.com/savePdf";
 
         const response = await fetch(url, {
             method: "POST",
@@ -102,53 +101,32 @@ async function saveToFirebase(file) {
         Swal.fire("Error", "Something went wrong saving the certificate.", "error");
     }
 }
+
+
+function getCertNumber() {
+    // Use last 6 digits of timestamp
+    return parseInt(Date.now().toString().slice(-6));
+}
     return(
         <div className="completeWrap">
               <div id="certBack">
 
-        <div className="certWrap" id="certWrap">
-            <div className="cerTri1">
-                 <img src={bgPattern} alt=""/>
-            </div>
-            <div className="cerTri2">
-                <img src={bgPattern} alt=""/>
-            </div>
-         
-            <div className="badge">
-                <img src={certB} alt=""/>
-            </div>
-   
-            <div className="certPlacer">
-                <div className="certTop">
-                    <div className="certLogo">
-                        {/* <img width="100px" src={newLogo} alt=""/> */}
-                        <h3>NDDA</h3>
-                    </div>
-                    <div className="certQR">
-                      <img width="100px" id="qrImage" src="" alt=""/>
-                    </div>
-                </div>
-                <div className="certMid">
-                    <h2>CERTIFICATE <br /> <span>OF COMPLETION</span> </h2>
-                    <p>This is to certify that</p>
-                    <h3 id="certOwner">{username}</h3>
-                    <p>has completed a course on </p>
-                    <h3 id="certTopic">Georgia Defensive Driving</h3>
-                    <p>on</p>
-                    <p id="certDate">{getFormattedDate()}</p>
-                 
-                </div>
+      <div className="certWrap" id="certWrap">
 
-            </div>
+            <img src={cert} alt="" />
+            <p className="newcertusername" id="newcertusername">{username}</p>
+            <p className="newcertDate">{getFormattedDate()}</p>
+                <p className="newcertNumbercomplete">{getCertNumber()}</p>
+
+            
         </div>
 
     </div>
                   <img src={certImg} alt="" />
 <h3>Grade: {getGrade(userScore)}</h3>
                   <p>Congratulations on completing the test</p>
-                  <button onClick={downloadCertificate}>Donwload Certificate</button>
+                  <button onClick={downloadCertificate}>Download Certificate</button>
                 
-
         </div>
     )
 }

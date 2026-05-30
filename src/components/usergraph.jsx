@@ -16,7 +16,7 @@ export default function GraphWrap(){
 const paynow = async () => {
   const amount = 1;
 
-  const resp = await fetch("https://drvingappbackend.onrender.com/paynow", {
+  const resp = await fetch("https://drvingappbackend-ix55.onrender.com/paynow", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ amount,userID }),

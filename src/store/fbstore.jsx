@@ -4,9 +4,10 @@ const useFBstore = create((set)=>({
     username:null,
     authStatus:"loading",
     userID:null,
-    courseProgress:null,
+    courseProgress:0,
     courseComplete:null,
     coursePaid:null,
+    isAdmin:false,
     userScore:0,
     testStatus:null,
 
@@ -18,7 +19,8 @@ const useFBstore = create((set)=>({
     setCourseComplete: (cc)=>set({courseComplete:cc}),
     setCoursePaid: (paid)=>set({coursePaid:paid}),
     setUserScore: (score)=>set({userScore:score}),
-    setTestStatus: (ts)=>set({testStatus:ts})
+    setTestStatus: (ts)=>set({testStatus:ts}),
+    setIsAdmin: (isAdm)=>set({isAdmin:isAdm})
     
 
 

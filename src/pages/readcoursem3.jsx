@@ -8,42 +8,134 @@ import { db } from "../firebase/firebaseConfig";
 import { doc, updateDoc } from "firebase/firestore";
 import useFBstore from "../store/fbstore";
 import { useEffect } from "react";
-
+import { getAuth, signOut } from "firebase/auth";
+import Swal from "sweetalert2";
+import logo from "../media/ndda-logo.png";
+import useStore from "../store/store";
+import { Icon } from "@iconify/react";
 
 function ReadCourseM3() {
    const userID = useFBstore((s)=>s.userID)
     const navigate = useNavigate();
+       const courseProgress = useFBstore((s)=>s.courseProgress)
+      const slideMenu = useStore((s) => s.slideMenu);
+      const removeSlideMenu = useStore((s) => s.removeSlideMenu);
+          const isAdmin = useFBstore((s)=>s.isAdmin)
+
+
+   const toAdmin =()=>{
+        navigate("/subuser")
+        removeSlideMenu()
+      }
+        const toLand =()=>{
+                    navigate("/")
+                    removeSlideMenu()
+                  }
+                  const toDash =()=>{
+                    navigate("/dashboard")
+                    removeSlideMenu()
+                  }
+              const hideMenuFon = () => {
+                  removeSlideMenu();
+                };
+                  const logOut =()=>{
+                              Swal.fire({
+                                        title:"Are You Sure?",
+                                        text:"Please confirm you are signing out!",
+                                        icon:"question",
+                                        showConfirmButton:true,
+                                        confirmButtonText:"Log Out",
+                                        showCancelButton:true,
+                                        cancelButtonText:"Cancel",
+                                        cancelButtonColor:"#"
+                                    
+                                    }).then((result)=>{
+                                        if(result.isConfirmed){
+                                        const auth = getAuth()
+                                        signOut(auth).then(()=>{
+                                            navigate("/auth")
+                                        }).catch(()=>{
+                                            Swal.fire("Error", "An error occured", "error")
+                                        })
+                                        }
+                                      
+                                    })
+                        
+                          
+                        }
+                        const signIn =()=>{
+                      navigate("/auth")
+            
+                    }
+            
+
     
     const tomod2 =() =>{
         navigate("/readcourse/georgia-traffic-laws-and-safe-driving-responsibilities")
     }
     const tomod4 =() =>{
-        navigate("/readcourse/collision-avoidance-and-emergency-maneuvers")
-    }
-    
-       useEffect(() => {
-      
+        
       if (userID) {
         const userRef = doc(db, "Users", userID);
         updateDoc(userRef, { courseProgress: 60 })
-          .then(() => console.log("Course progress updated "))
+          .then(() => {
+console.log("Course progress updated ")
+        navigate("/readcourse/collision-avoidance-and-emergency-maneuvers")
+
+          } )
           .catch((err) => console.error("Error updating course progress:", err));
       }
-    }, [userID]);
+    }
+    
+    
   return (
+    <>
+     <div className={`slideNav ${slideMenu ? "slideNavActive" : ""}`}>
+            <div className="slideNavPlacer">
+              <div className="snlCancel">
+                <img src={logo} alt="" />
+                <div className="snlCancelCont" onClick={hideMenuFon}>
+                  <Icon icon="solar:arrow-right-linear" className="faIcon" />
+                </div>
+              </div>
+              <div className="snlLinks">
+               <div className="slideNavLink" onClick={toLand}>
+              <p>Home</p>
+            </div>
+
+            <div className="slideNavLink" onClick={toDash}>
+              <p>Course Module</p>
+            </div>
+               {isAdmin && <div className="slideNavLink" onClick={toAdmin}>
+              <p>Admin Panel</p>
+            </div>}
+            <div className="slideNavLink" onClick={toDash}>
+              <p>My Progress {courseProgress}%</p>
+            </div>
+    
+                <div className="slideNavLink">
+                    {userID ? (
+                  <p onClick={logOut}>Sign Out</p>
+    
+                    ) : (      
+                    <p onClick={signIn}>Sign In</p>
+                )}
+                </div>
+              </div>
+            </div>
+    </div>
     <div className="readCoursePage">
       <Navbar />
       <div className="readCoursePlacer">
         <div className="rcIntro">
-          <span>Module Three</span>
-          <h2>Hazard Recognition and Risk Management.</h2>
-          <p>Lorem, ipsum doloe rer erer.</p>
+          <span>Module 3</span>
+          <h1>Hazard Recognition and Risk Management.</h1>
           <div className="courseIntroImg">
             <img src={cImg} alt="" />
           </div>
         </div>
         <div className="rcActCourse">
-          <h4>Hazard Recognition and Risk Management</h4>
+          <h2>Hazard Recognition and Risk Management</h2>
           <p>
             Hazard recognition is the foundation of defensive driving. Hazards
             include any condition or behavior that increases the likelihood of a
@@ -91,6 +183,8 @@ support consistent, controlled driving behavior.
       <Burner />
       <Footer />
     </div>
+    </>
+    
   );
 }
 

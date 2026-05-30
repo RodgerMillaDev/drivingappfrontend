@@ -24,7 +24,7 @@ export default function Dashmain(){
  <div className="dmwTop">
                     <div className="dmwBox1">
                         <div className="dmwbCont">
-   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum ipsam cupiditate qui illo quidem explicabo?</p>
+   <p>Our mission is to empower individuals with the knowledge, skills, and confidence to become responsible, safe, and courteous drivers.</p>
                         <button>Start Course</button>
                         </div>
                      

@@ -1,21 +1,24 @@
 import "../css/footer.css"
+import { useNavigate } from "react-router";
 
 function Burner(){
+    const navigate = useNavigate()
+    const toDash =()=>{
+        navigate("/dashboard")
+    }
+
    return(
     <div className="Burner">
         <div className="burnerPlacer">
             <div className="topSpan">
-                Lorem, ipsum dolor.
+                Driving Course
             </div>
-            <span className="midSpan">Lorem ipsum dolor sit, amet consectetur adipisicing.</span>
-            <span className="btmSpan">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus sit autem enim eligendi ratione reprehenderit officiis distinctio provident nesciunt! Corporis, illum magni.
-            </span>
-            <button>Get Started</button>
-
+            <span className="midSpan">Our Most Popular Courses</span>
+            <p className="btmSpan">
+               Our "Georgia Defensive driving " course combines engaging multimedia content, interactive simulations, and experienced instructors to create a dynamic learning experience.
+            </p>
+            <button onClick={toDash}>Get Started</button>
         </div>
-
-
     </div>
    )
 }

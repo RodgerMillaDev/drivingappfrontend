@@ -1,4 +1,4 @@
-import driver from "../media/pexels-shkrabaanthony-7144208.jpg";
+import driver from "../media/pexels-alexander-mass-748453803-22669774.jpg";
 import "../css/auth.css";
 import { Icon } from "@iconify/react";
 import Swal from "sweetalert2";
@@ -6,6 +6,7 @@ import { Bouncy, Jelly } from "ldrs/react";
 import { useNavigate } from "react-router";
 import { auth, db } from "../firebase/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
+import logo from "../media/ndda-logo.png"
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -24,45 +25,56 @@ function Auth() {
   const navigate = useNavigate();
   const [logLoader, setLogLoader] = useState();
   const [signLoader, setSignLoader] = useState();
+  const [isLog, setIsLog] = useState();
 
-  const resetPass = async () => {
-    const { value: email } = await Swal.fire({
-      input: "email",
-      text: "Your email address",
-      inputPlaceholder: "Enter your email address",
-    });
-    if (email) {
-      sendPasswordResetEmail(auth, email)
-        .then(() => {
-          Swal.fire("Password reset email sent! CHeck your mail");
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
-    }
+
+
+const resetPass = async () => {
+  const { value: email } = await Swal.fire({
+    input: "email",
+    text: "Enter your email address",
+    inputPlaceholder: "you@yourdomain.com",
+  });
+
+  if (!email) return;
+
+  const actionCodeSettings = {
+    url: "https://nationaldefensivedrivingacademy.com/reset-password",
+    handleCodeInApp: false,
   };
 
-  useEffect(() => {
+  sendPasswordResetEmail(auth, email, actionCodeSettings)
+    .then(() => {
+      Swal.fire(
+        "Email Sent",
+        "Password reset link has been sent to your email.",
+        "success"
+      );
+    })
+    .catch((error) => {
+      Swal.fire(
+        "Error",
+        error.message,
+        "error"
+      );
+    });
+};
+useEffect(() => {
     setIsLog(true);
   }, []);
-
-  const [isLog, setIsLog] = useState();
-  const toLog = () => {
+const toLog = () => {
     setIsLog(true);
   };
-  const toSign = () => {
+const toSign = () => {
     setIsLog(false);
   };
-
-  const SignUp = () => {
+const SignUp = () => {
     const fn = signNm.current.value;
     const em = signEm.current.value;
     const pass = signPass.current.value;
     const cpass = signCpass.current.value;
 
-    if (em && pass && cpass) {
+    if (fn && em && pass && cpass) {
       if (pass === cpass) {
         setSignLoader(true);
 
@@ -80,14 +92,16 @@ function Auth() {
                 profUpdate: false,
                 courseProgress: 0,
                 courseComplete: false,
-                coursePad: false,
+                coursePaid: false,
                 amountPaid: 0,
+                TestStatus:"",
+                
               };
               await setDoc(doc(db, "Users", user.uid), userData).then(() => {
-                Swal.fire(
-                  "",
-                  "Verification email sent. Please check your inbox.",
-                ).then(() => {
+               Swal.fire(
+   "Verification Email Sent!",
+   "Check your inbox. Not there? Peek in your <strong>spam</strong> folder.",
+  "success").then(() => {
                   setSignLoader(false);
                   toLog();
                 });
@@ -96,9 +110,13 @@ function Auth() {
           })
           .catch((err) => {
             setSignLoader(false);
+            console.log(err)
 
             if (err.code === "auth/email-already-in-use") {
               Swal.fire("", "Email already in use. Try logging in.", "warning");
+            }
+            if (err.code === "auth/invalid-email") {
+              Swal.fire("", "Use a valid email", "warning");
             }
           });
       } else {
@@ -107,9 +125,8 @@ function Auth() {
     } else {
       Swal.fire("", "Oops! Looks like you missed a field", "warning");
     }
-  };
-
-  const LogIn = () => {
+ };
+const LogIn = () => {
     const em = logEm.current.value;
     const pass = logPass.current.value;
 
@@ -135,10 +152,10 @@ function Auth() {
                 sendEmailVerification(user).then(() => {
                   //  setLogLoader(true)
 
-                  Swal.fire(
-                    "",
-                    "Verification email sent. Please check your inbox.",
-                  );
+         Swal.fire(
+   "Verification Email Sent!",
+   "Check your inbox. Not there? Peek in your <strong>spam</strong> folder.",
+  "success");
                 });
               }
             });
@@ -168,24 +185,19 @@ function Auth() {
       Swal.fire("", "Oops! Looks like you missed a field", "warning");
       setLogLoader(false);
     }
-  };
-
+};
   return (
     <div className="authPage">
       <div className="authLeft">
         <img src={driver} alt="" />
         <div className="authLeftWrapper">
           <div className="authMiniCont">
-            <span>Become a Pro in Driving.</span>
+            <h1>Responsible, Safe & Courteous Drivers.</h1>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Necessitatibus, beatae!
+             Learn at your own pace and build safer driving habits with expert guidance.
+
             </p>
-            <div className="dots">
-              <div className="ld"></div>
-              <div className="sd"></div>
-              <div className="sd"></div>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -194,10 +206,16 @@ function Auth() {
           {isLog ? (
             <div className="authLog">
               <div className="authIntro">
-                <h5>NDDA </h5>
+                 <img src={logo} alt="" />
                 <span>Welcome back,</span>
                 <p>Log in to access your account.</p>
               </div>
+              <form
+  onSubmit={(e) => {
+    e.preventDefault();
+    LogIn();
+  }}
+>
               <div className="authContWrap">
                 <div className="inputWrap">
                   <div className="inputIcon">
@@ -222,11 +240,13 @@ function Auth() {
               </div>
               <div className="authBtnWrap">
                 {logLoader ? (
-                  <Bouncy size="45" speed="1" color="#00752F"></Bouncy>
+                  <Bouncy size="45" speed="1" color="#EB1E26"></Bouncy>
                 ) : (
-                  <button onClick={LogIn}>Log In</button>
+                  <button type="submit">Log In</button>
                 )}
               </div>
+              </form>
+
               <div className="authOpt">
                 <p>
                   Don't have an account? <span onClick={toSign}>Sign Up</span>
@@ -237,10 +257,17 @@ function Auth() {
           ) : (
             <div className="authSign">
               <div className="authIntro">
-                <h5> NDDA </h5>
+
+                <img src={logo} alt="" />
                 <span>Create an account.</span>
                 <p>Get started, its free!</p>
               </div>
+                            <form
+  onSubmit={(e) => {
+    e.preventDefault();
+    SignUp();
+  }}
+>
               <div className="authContWrap">
                 <div className="inputWrap">
                   <div className="inputIcon">
@@ -285,11 +312,12 @@ function Auth() {
               </div>
               <div className="authBtnWrap">
                 {signLoader ? (
-                  <Bouncy size="45" speed="1" color="#00752F"></Bouncy>
+                  <Bouncy size="45" speed="1" color="#EB1E26"></Bouncy>
                 ) : (
-                  <button onClick={SignUp}>Sign Up</button>
+                  <button type="submit">Sign Up</button>
                 )}
               </div>
+              </form>
               <div className="authOpt">
                 <p>
                   Already have an account? <span onClick={toLog}>Log In</span>

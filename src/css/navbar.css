@@ -21,6 +21,9 @@
     justify-content: start;
     align-items: center;
 }
+.gnbLogo img{
+    width: 100px;
+}
 .gnbLogoDark p{
     color: aliceblue;
 }
@@ -33,15 +36,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 .gnbLinksDark{
     color: aliceblue;
+    
 }
-
-.gnbLink{
+.gnbLinksBright{
+    background: rgb(255, 255, 255);
+    border-radius: 7px;
+}
+ .gnbLink{
     position: relative;
     cursor: pointer;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: .3s ease;
 }
 .gnbLinksDark .gnbLinkActive::after{
@@ -60,7 +73,7 @@
     position: absolute;
     width: 50%;
     height: 2px;
-    background: #046733;
+    background: var(--pri-color);
     left: 50%;
     border-radius: 10px;
     margin-top: 10px;
@@ -69,29 +82,320 @@
 .gnbLink p{
     padding: 0 17px ;
     transform: .3s ease;
+
+}
+ .gnbBtnDark .navUser{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pri-color);
+    background: aliceblue;
+    border-radius: 50%;
+    background: aliceblue;
+    cursor: pointer;
+    margin-left: 5px;
+}
+ .gnbBtn .navUser{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: 1px solid #00000027;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.navUser .faIcon{
+    font-size: 25px;
 }
 .gnbBtn{
     width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
-.gnbBtnDark button{
-    width: 120px;
-    height: 45px;
-    border: none;
-    color: #046733 !important;
-    background: aliceblue !important;
-    font-family: font1;
-    border-radius: 10px;
-    cursor: pointer;
 
+
+
+.gnbBtn .navProgress{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: rgba(255, 255, 255) ;
+    padding: 5px 10px;
+    color: black;
+    border-radius: 10px;
 }
-.gnbBtn button{
-    width: 120px;
-    height: 45px;
-    border: none;
-    background: #046733;
+.gnbBtnDark .navProgress{
+    background: rgb(255, 255, 255) !important;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+@property --a {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.progressCircleWrap {
+  --b: 4px;
+  --a: 0deg;
+
+  width: 35px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--pri-color);
+
+  /* 🔥 TRANSITION LIVES HERE */
+  margin-left: 10px;
+  transition: --a 0.8s ease-out;
+}
+.gnbBtnDark .progressCircleWrap {
+  --b: 4px;
+  --a: 0deg;
+
+  width: 35px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--pri-color);
+
+  /* 🔥 TRANSITION LIVES HERE */
+  margin-left: 10px;
+  transition: --a 0.8s ease-out;
+}
+
+.progressCircleWrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--b);
+  border-radius: 50%;
+  background: var(--pri-color);
+
+  --_g: /var(--b) var(--b) no-repeat
+    radial-gradient(50% 50%, #000 97%, #0000);
+
+  mask:
+    top var(--_g),
+    calc(50% + 50% * sin(var(--a)))
+    calc(50% - 50% * cos(var(--a))) var(--_g),
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 var(--a), #0000 0);
+}
+.gnbBtnDark .progressCircleWrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--b);
+  border-radius: 50%;
+  background: var(--pri-color);
+
+  --_g: /var(--b) var(--b) no-repeat
+    radial-gradient(50% 50%, #000 97%, #0000);
+
+  mask:
+    top var(--_g),
+    calc(50% + 50% * sin(var(--a)))
+    calc(50% - 50% * cos(var(--a))) var(--_g),
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 var(--a), #0000 0);
+}
+
+
+
+/* keep text above ring */
+.progressCircleWrap span {
+  position: relative;
+  font-family: font1;
+  font-size: .8rem;
+  z-index: 1;
+}
+.gnbBtnDark .progressCircleWrap span {
+  position: relative;
+  font-family: font1;
+  z-index: 1;
+  color: var(--pri-color) !important;
+}
+
+.gnbBtnDark{
     color: aliceblue;
-    font-family: font1;
-    border-radius: 10px;
-    cursor: pointer;
+}
+ .gnbLinkDd{
+    position: relative;
+}
+.gnbLinkDd {
+  position: relative;
+}
 
+.dropDown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.2s ease;
+
+  pointer-events: none;
+}
+
+.dropDown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropDown p {
+  padding: 10px 14px;
+  cursor: pointer;
+  margin: 0;
+  color: black;
+  transition: .3s ease;
+  border-radius: 10px;
+}
+
+.dropDown p:hover {
+    scale: 1.05;
+}
+.fonNavIcon{
+  display: none;
+}
+.activeLinkModule{
+    color: aliceblue !important;
+    background: var(--pri-color);
+}
+.slideNav{
+    display: none;
+}
+@media only screen and (max-width:992px ){
+    .Burner{
+        width: 95%;
+    }
+    .gnbLinks{
+        display: none;
+    }
+    .navUser{
+        display: none !important;
+    }
+    .fonNavIcon{
+       width: 40px;
+       height: 40px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       font-size: 1.5rem;
+       border-radius: 50%;
+       background: rgb(255, 255, 255);
+       color: black;
+       margin-left: 10px;
+       border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+   
+    .gnbPlcer{
+        width: 95%;
+    }
+    .slideNav{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: flex;
+        background: rgb(255, 255, 255) !important;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease;
+        right: -105%;
+        z-index: 5;
+    }
+    .slideNavActive{
+                right: 0%;
+
+    }
+    .slideNavPlacer{
+        width: 90%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: start;
+        align-items: end;
+    }
+    .snlCancel{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .snlCancel img{
+        width: 90px;
+
+}
+.snlLinks{
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.slideNavLink{
+    padding: 10px 10px;
+}
+.snlCancelCont{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: var(--pri-color);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.snlCancelCont .faIcon{
+    font-size: 1.6rem;
+}
+.navProgress p{
+    display: none;
+}
+.progressCircleWrap{
+    margin-left: 0 !important;
+}
 }

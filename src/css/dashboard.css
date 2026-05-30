@@ -3,33 +3,6 @@
     padding: 0;
 }
 
-input{
- border: none;
- background: none;
- font-family: font1;
- font-size: 1rem;
-}
-input:focus{
-    outline: none;
-}
-h1{
-    font-size: 5rem;
-}
-h2{
-    font-size: 3.5rem;
-}
-h3{
-    font-size: 2.5rem;
-}
-h4{
-    font-size: 1.2rem;
-}
-h5{
-    font-size: 1rem;
-}
-p{
-    font-size: 1rem;
-}
 .dashboard{
     width: 100vw;
     height: 100vh;
@@ -40,7 +13,7 @@ p{
 }
 
 .dcTop{
-    background: linear-gradient(45deg, #044723, #079b4c);
+    background: linear-gradient(45deg, #5e0b0d, var(--pri-color));
     height: 450px;
 }
 .dcTopIntro{
@@ -56,12 +29,13 @@ p{
   letter-spacing: -2px;
   width: 80%;
   margin: 0 auto;
-  line-height: 80px;
   text-align: center;
 }
 .dcTopIntro p{
     font-size: 1rem;
     margin-top: 30px;
+    width: 90%;
+    text-align: center;
 }
 .dcBtm{
     height: fit-content;
@@ -93,7 +67,7 @@ p{
     width: 0%;
     border-radius: 30px;
     height: 100%;
-    background: linear-gradient(45deg, #044723, #079b4c);
+    background: linear-gradient(45deg, #5e0b0d, var(--pri-color));
 
 
 }
@@ -133,7 +107,7 @@ p{
 }
 .dcmcDesc{
     width: 100%;
-    height: 60%;
+    height: 70%;
     position: absolute;
     padding-bottom: 20px;
     bottom: 0;
@@ -151,6 +125,8 @@ p{
     cursor: pointer;
     font-family: font1;
     border: none;
+        font-size: 1rem;
+
     border-radius: 10px;
     color: black;
 }
@@ -172,9 +148,50 @@ p{
 .dcmcTop p {
     color: aliceblue;
     opacity: .8;
-
+    margin-bottom: 10px;
     display: -webkit-box;
     -webkit-line-clamp: 2;     /* number of lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+@media only screen and (max-width:992px ){
+.dcTop{
+    background: linear-gradient(45deg, #5e0b0d, var(--pri-color));
+    height: 350px;
+}
+.dcTopIntro{
+    height: calc(350px - 10vh);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+    .dcBtm{
+        width: 95%;
+    }
+    .dcModules {
+
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+.dcTopIntro h1{
+  letter-spacing: -2px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+}
+
+@media only screen and (min-width:1620px ){
+.dcModuleCard{
+    height: 350px;
+}
+    .dcBtm{
+        width: 1220px;
+    }
+
 }

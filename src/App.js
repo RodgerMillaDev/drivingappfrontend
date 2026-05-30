@@ -14,16 +14,20 @@ import ReadCourseM5 from './pages/readcoursem5';
 import Complete from './pages/paymentcomplete';
 import Failed from './pages/paymentfailed';
 import Protected from './pages/protected';
+import Subuser from './pages/subuser';
+import Landing from './pages/landing';
+import AdminRoute from './pages/adminprotected';
+
 import CompleteTest from './pages/complete';
 function App() {
 
   return (
-   
+  
     <div>
      <BrowserRouter>
      <AuthProvider/>
      <Routes>
-      <Route path="/" element={<Dashboard/>}/>
+      <Route path="/" element={<Landing/>}/>
       <Route path="/auth" element={<Auth/>}/>
       
       <Route 
@@ -31,6 +35,17 @@ function App() {
       element={
         <Protected>
           <Dashboard/>
+        </Protected>
+
+        } 
+        />
+      <Route 
+      path="/subuser" 
+      element={
+        <Protected>
+        <AdminRoute>
+          <Subuser/>
+        </AdminRoute>
         </Protected>
 
         } 

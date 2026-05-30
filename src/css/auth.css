@@ -2,44 +2,8 @@
     margin:0;
     padding: 0;
 }
-@font-face {
-    font-family: font1;
-    src: url(../media/font1/GoogleSans-Regular.ttf);
-}
-@font-face {
-    font-family: font1Bold;
-    src: url(../media/font1/GoogleSans-Bold.ttf);
-}
-input{
-    border: none;
- background: none;
- font-family: font1;
- font-size: 1rem;
-}
-body{
-    font-family: font1;
-}
-input:focus{
-    outline: none;
-}
-h1{
-    font-size: 5rem;
-}
-h2{
-    font-size: 3.5rem;
-}
-h3{
-    font-size: 2.5rem;
-}
-h4{
-    font-size: 1.2rem;
-}
-h5{
-    font-size: 1rem;
-}
-p{
-    font-size: .9rem;
-}
+
+
 .authPage{
     width: 100vw;
     height: 100vh;
@@ -111,14 +75,13 @@ p{
     margin: 0 10px !important;
 
 }
-.authMiniCont span{
+.authMiniCont h1{
   font-family: font1Bold;
-  font-size: 4rem;
-  letter-spacing: -2px;
 }
 .authMiniCont p{
     opacity: .7;
     margin: 10px 0px 30px 0;
+    width: 80%;
 
 }
 .authRight{
@@ -146,6 +109,17 @@ p{
     align-items: start;
     flex-direction: column;
 }
+.authLog form,.authSign form{
+    width: 100%;
+}
+.authIntro{
+    display: flex;
+    flex-direction: column;
+}
+.authIntro img{
+    width: 100px;
+    margin-bottom: 30px;
+}
 .authIntro span{
     font-size: 1.7rem;
     font-family: font1Bold;
@@ -153,7 +127,7 @@ p{
 .authIntro h4{
 }
 .authIntro p {
-        margin-top: 10px;
+        margin-top: 5px;
 
 }
 .authContWrap{
@@ -204,9 +178,10 @@ p{
 .authBtnWrap button{
     width: 100%;
     cursor: pointer;
-    background: #00752F;
+    background: var(--pri-color);
     border-radius: 5px;
     height: 100%;
+    font-size: 1rem;
     border: none;
     color: aliceblue;
     font-family: font1;
@@ -230,12 +205,26 @@ p{
     cursor: pointer;
 }
 .authOpt span{
-    color: #00752F;
+    color: var(--pri-color);
     text-decoration: underline;
 
     cursor: pointer;
 }
 .inputIcon .faIcon{
-    color: #00752F;
+    color: var(--pri-color);
   font-size: 20px;
+}
+@media only screen and (max-width:992px ){
+ .authLeft{
+    display: none;
+ }
+ .authRight{
+    width: 100%;
+ }    
+ .authRightWrap{
+    width: 90%;
+ }
+ .authOpt p{
+    font-size: .9rem;
+ }
 }

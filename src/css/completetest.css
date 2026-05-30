@@ -8,16 +8,16 @@
 }
 
 
-
-
 .completeWrap img{
     width: 100px;
+    /* filter: grayscale(1); */
 }
 .completeWrap button{
+    font-size: 1rem;
     width: 200px;
     margin-top: 20px;
     cursor: pointer;
-    background: #00752F;
+    background: var(--pri-color);
 
 }
 .completeWrap p{
@@ -31,11 +31,8 @@
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.372);
-
-    z-index: -5;
+    z-index: 5;
     position: fixed;
-    
-
 }
 
 .certWrap{
@@ -45,158 +42,61 @@
     margin: auto;
     border-radius: 5px;
     width: 650px;
-    height: 450px;
+    height: 500px;
     max-width: 650px;
     max-height: 450px;
     min-width: 650px;
-    min-height: 450px;
+    min-height: 500px;
     
     /* Prevent scaling */
     transform: none;
     zoom: 1;
 
     background: white;
-    background-image: linear-gradient(109deg, rgba(236, 236, 236,0.02) 0%, rgba(236, 236, 236,0.02) 13%,transparent 13%, transparent 64%,rgba(55, 55, 55,0.02) 64%, rgba(55, 55, 55,0.02) 71%,rgba(239, 239, 239,0.02) 71%, rgba(239, 239, 239,0.02) 100%),linear-gradient(205deg, rgba(8, 8, 8,0.02) 0%, rgba(8, 8, 8,0.02) 1%,transparent 1%, transparent 60%,rgba(9, 9, 9,0.02) 60%, rgba(9, 9, 9,0.02) 80%,rgba(198, 198, 198,0.02) 80%, rgba(198, 198, 198,0.02) 100%),linear-gradient(153deg, rgba(134, 134, 134,0.02) 0%, rgba(134, 134, 134,0.02) 30%,transparent 30%, transparent 43%,rgba(85, 85, 85,0.02) 43%, rgba(85, 85, 85,0.02) 47%,rgba(103, 103, 103,0.02) 47%, rgba(103, 103, 103,0.02) 100%),linear-gradient(284deg, rgba(178, 178, 178,0.02) 0%, rgba(178, 178, 178,0.02) 8%,transparent 8%, transparent 47%,rgba(161, 161, 161,0.02) 47%, rgba(161, 161, 161,0.02) 61%,rgba(19, 19, 19,0.02) 61%, rgba(19, 19, 19,0.02) 100%),linear-gradient(125deg, var(--pri2-color),var(--pri-color));
+    background-image: linear-gradient(109deg, rgba(236, 236, 236,0.02) 0%, rgba(236, 236, 236,0.02) 13%,transparent 13%, transparent 64%,rgba(55, 55, 55,0.02) 64%, rgba(55, 55, 55,0.02) 71%,rgba(239, 239, 239,0.02) 71%, rgba(239, 239, 239,0.02) 100%),linear-gradient(205deg, rgba(8, 8, 8,0.02) 0%, rgba(8, 8, 8,0.02) 1%,transparent 1%, transparent 60%,rgba(9, 9, 9,0.02) 60%, rgba(9, 9, 9,0.02) 80%,rgba(198, 198, 198,0.02) 80%, rgba(198, 198, 198,0.02) 100%),linear-gradient(153deg, rgba(134, 134, 134,0.02) 0%, rgba(134, 134, 134,0.02) 30%,transparent 30%, transparent 43%,rgba(85, 85, 85,0.02) 43%, rgba(85, 85, 85,0.02) 47%,rgba(103, 103, 103,0.02) 47%, rgba(103, 103, 103,0.02) 100%),linear-gradient(284deg, rgba(178, 178, 178,0.02) 0%, rgba(178, 178, 178,0.02) 8%,transparent 8%, transparent 47%,rgba(161, 161, 161,0.02) 47%, rgba(161, 161, 161,0.02) 61%,rgba(19, 19, 19,0.02) 61%, rgba(19, 19, 19,0.02) 100%),linear-gradient(125deg, #EAEFF0,#ffffff);
     text-align: center;
     position: relative;
     box-shadow: 0px 0px 10px gray;
 }
-.cerTri1{
-    width: 350px;
-    height:350px;
-    position: absolute;
-    z-index: 2;
-    bottom: 0px;
-    left: -100px;
-    transform: rotate(90deg);
-}
-.cerTri1 img{
-    width: 100%;
-}
-.cerTri2 img{
-    width: 100%;
-}
-.cerTri2{
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    z-index: 2;
-    top: -100px;
-    right: -120px;
 
-    transform: rotate(-450deg);
-}
-.cerSq1{
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    border: 2px solid #00000017;
-    left:50%;
-    transform: translate(-50%,-50%);
-    rotate: 45deg;
-    
-}
 
-.cerSq2{
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    border: 2px solid #00000017;
-    left:12%;
-    top: 20%;
-    transform: translate(-50%,-50%);
-    rotate: 45deg;
+.certWrap img{
+    width: 100%;
+    height: 100%;
 }
-.certPlacer{
-    width: 80%;
-    margin: 0 auto;
-    height: 90%;
+.newcertusername{
     position: absolute;
-    z-index: 5;
-    top: 50%;
+    top: 34%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    font-size: 1.6rem !important;
+    transform: translateX(-50%);
+    z-index: 6;
 }
-.certTop{
-    width: 100%;
-    height: 20%;
-    margin: 0 auto;
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-}
-.certLogo img{
-    width: 110px;
-}
-.certLogo h3{
-    letter-spacing: -2px;
-    font-size: 2rem;
-}
-.certQR img{
-    width: 50px;
-}
+.newcertDate{
+       position: absolute;
+    z-index: 6;
+    bottom: 10%;
+        font-size: 1rem;
 
+    left: 23%;
+}
+.newcertNumber{
+          position: absolute;
+    z-index: 6;
+    bottom: 5%;
+        font-size: 1rem;
 
-.certMid{
-height: 80%;
-display: flex;
-width: 100%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    left: 35%;
 }
-.certMid h2{
-color: #00752F;
-font-family: font1Bold;
-font-weight: 900;
-font-size: 2.5rem;
-line-height: 40px;
-margin: 0;
-}
-.certMid h3{
-color: #00752F;
-font-family: font1Bold;
-font-weight: 100;
-font-size: 1.5rem;
-margin: 0;
-}
-.certMid p{
-margin: 10px 0;
-font-style: italic;
+.newcertNumbercomplete{
+       position: absolute;
+    z-index: 6;
+    bottom: 1.5%;
+        font-size: 1rem;
 
-font-size: 1rem;
-color: rgb(67, 67, 67);
+    left: 35%;
 }
-.certMid span{
-  color: aliceblue;
-  background: #00752F;
-  border-radius: 10px;
-  padding: 10px 20px;
-}
-.deGrade h4{
-color: rgb(67, 67, 67);
+.newcertDateSubUser{
+        bottom: 14%;
 
-}
-.badge{
-width: auto;
-position: absolute;
-z-index: 6;
-right:7%;
-bottom: 6%;
-
-}
-.badge img{
-width: 120px;
-
-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.126));
-
-}
-.deGrade{
-display: flex;
-
-width: 30%;
-margin: 0 auto;
-height: 60px;
-justify-content: space-between;
-align-items: center;
 }

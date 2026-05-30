@@ -1,0 +1,613 @@
+.hero{
+    width: 100vw;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.heroBack{
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+}
+.heroNav{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    z-index: 2;
+}
+.heroCont{
+    width: 100%;
+    margin:  0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    height: 100vh;
+}
+
+.heroRight{
+ width: 40%;
+ height: 100%;
+ overflow: hidden;
+ background: url(../media/pexels-ketut-subiyanto-4429509.jpg)no-repeat center/cover;
+}
+.heroLeft{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+}
+.heroRightDark{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.24);
+}
+.heroLeftCont{
+    width: 92%;
+    margin-left: 8%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.heroLeftContSum{
+    height: 20vh;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.192);
+
+}
+.hlcPlacer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 8%;
+    height: 100%;
+}
+.hlcPlacer .hlcCard span{
+    font-size: 2.2rem;
+    font-weight: 900;
+
+}
+.hlcCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+}
+.heroLeftCont h1 span{
+ background: var(--pri-color);
+ color: aliceblue;
+}
+.heroLeftCont p{
+    margin: 20px 0;
+    width: 90%;
+}
+.heroLeftCont button{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: var(--pri-color);
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.xpSection{
+    width: 100vw;
+    height: fit-content;
+    padding: 15vh 0;
+
+}
+.xpsPlacer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+}
+.xpsLeft{
+    width: 40%;
+    height: 100%;
+
+}
+.xpsLeft span{
+    color: var(--pri-color);
+}
+.xpsRight{
+    width:55%;
+    margin-right: 5%;
+    height: 100%;
+}
+
+.miniCourses{
+    width: 100vw;
+    height: 100vh;
+
+}
+.miniCourses{
+    width: 100vw;
+    height: fit-content;
+    /* padding: 10vh 0; */
+}
+.mcPlacer{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+.mcPlacerCards{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
+
+}
+.cmCard{
+ height: 450px;
+ background: #F6F6F6;
+ overflow: hidden;
+ border-radius: 10px;
+ display: flex;
+ cursor: pointer;
+ justify-content: center;
+ align-items: center;
+}
+.seccmCard{
+  background: var(--pri-color);
+}
+.cmCardPlacer{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 85%;
+}
+
+.cmCardTop{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    align-items: start;
+}
+.cmCard:hover .cmCardTop .faIcon{
+    top: -60%;
+    right: -25%;
+    opacity: .1;
+
+}
+.seccmCard .cmCardPlacer .cmCardTop .faIcon{
+    color: aliceblue;
+}
+.cmCardTop .faIcon{
+    font-size: 5rem;
+    transition: .3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.cmCardTop button{
+    padding: 10px 30px ;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: font1;
+    background: none;
+    color: black;
+    border: 1px solid black;
+}
+.seccmCard .cmCardPlacer .cmCardTop button{
+    color: aliceblue;
+    cursor: pointer;
+    
+        border: 1px solid aliceblue;
+
+
+}
+.cmCardBtm h3{
+
+    margin-bottom: 20px;
+}
+.cmCardBtm p{
+    opacity: .8;
+
+}
+.seccmCard .cmCardPlacer .cmCardBtm h3{
+    color: aliceblue;
+}
+.seccmCard .cmCardPlacer .cmCardBtm p{
+    color: aliceblue;
+}
+.saveCash{
+    width: 100vw;
+    height: 100vh;
+    padding: 10vh 0;
+}
+.saveCashPlacer{
+    width: 90%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+
+}
+.saveCashLeft{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    border-radius: 10px;
+    background: url(../media/pexels-kindelmedia-7715189.jpg)no-repeat center/cover;
+    justify-content: end;
+    align-items: center;
+}
+.scrCont{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    text-align: end;
+    flex-direction: column;
+    height: 85%;
+}
+.saveCsshRight{
+    margin-left: 5%;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: #F6F6F6;
+    justify-content: center;
+
+}
+.saveCsshRight span{
+    font-size:  1.2rem;
+    color:  var(--pri-color);
+    margin-bottom: 20px;
+}
+.saveCsshRight p{
+    margin: 20px 0;
+}
+.saveCsshRight button{
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.2rem;
+    background: var(--pri-color);
+    border-radius: 10px;
+    color: aliceblue;
+}
+.Testimonial{
+    width: 100vw;
+    height: fit-content;
+    padding: 10vh 0;
+    background: rgba(128, 128, 128, 0.192);
+
+}
+.testimonialPlacer{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+.testimonialCard{
+    width: 100%;
+    height: fit-content;
+}
+.userSaid img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-items: center;
+
+}
+.testimonialCard span .faIcon{
+    font-size: 8rem;
+}
+.testimonialCard h2{
+    width: 90%;
+    text-align: end;
+    margin-left: 10%;
+    color: #585858;
+}
+.testimonialCard h2 span{
+  background: var(--pri-color);
+  color: aliceblue;
+}
+.userSaid{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: start;
+}
+.userSaid .userDet{
+    margin-left: 10px;
+}
+.userDet p:nth-child(2){
+    font-style: italic;
+    opacity: .6;
+}
+@media only screen and (max-width:992px ){
+.hero{
+
+    height: fit-content;
+
+}
+
+.heroNav{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    z-index: 2;
+}
+.heroCont{
+    flex-direction: column;
+    height: fit-content;
+    position: static;
+   
+}
+
+.heroRight{
+ width: 100%;
+ height: 300px;
+ overflow: hidden;
+ background: url(../media/pexels-ketut-subiyanto-4429509.jpg)no-repeat center/cover;
+}
+.heroLeft{
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+
+}
+.heroRightDark{
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.192);
+}
+.heroLeftCont{
+    width: 95%;
+    
+    height: fit-content;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 20vh;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.heroLeftContSum{
+    height: 20vh;
+    width: 100%;
+    margin-top: 30px;
+    background: rgba(128, 128, 128, 0.192);
+
+}
+.hlcPlacer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0%;
+    height: 100%;
+}
+.hlcPlacer .hlcCard span{
+    font-size: 1.8rem;
+}
+.hlcCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+}
+.heroLeftCont h1{
+    width: 100%;
+}
+.heroLeftCont h1 span{
+ background: var(--pri-color);
+ color: aliceblue;
+}
+.heroLeftCont p{
+    margin: 20px 0;
+    width: 90%;
+}
+.miniCourses{
+    height: fit-content;
+
+}
+.mcPlacerCards{
+    display: flex;
+    flex-direction: column;
+}
+.xpSection{
+    padding: 7vh 0;
+
+}
+.xpsPlacer{
+    flex-direction: column;
+    width: 95%;
+}
+.xpsLeft{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.xpsRight{
+    width: 100%;
+    margin-right: 0;
+}
+.xpsRight p{
+    text-align: center !important;
+}
+
+.saveCash{
+    width: 100vw;
+    height: fit-content;
+    padding: 10vh 0;
+}
+.saveCashPlacer{
+    width: 90%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+
+}
+.saveCashLeft{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    border-radius: 10px;
+    background: url(../media/pexels-kindelmedia-7715189.jpg)no-repeat center/cover;
+    justify-content: end;
+    align-items: center;
+}
+.scrCont{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px 0;
+    height: fit-content;
+}
+.saveCsshRight{
+    margin-left: 0%;
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+    align-items: center;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: #F6F6F6;
+    justify-content: center;
+
+}
+.saveCsshRight span{
+    font-size:  1.2rem;
+    color:  var(--pri-color);
+    margin-bottom: 10px;
+}
+.saveCsshRight p{
+    margin: 10px 0;
+}
+.saveCsshRight button{
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.2rem;
+    background: var(--pri-color);
+    border-radius: 10px;
+    color: aliceblue;
+}
+.Testimonial{
+    width: 100vw;
+    height: fit-content;
+    padding: 5vh 0;
+
+}
+.testimonialPlacer{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+.testimonialCard{
+    width: 100%;
+    height: fit-content;
+}
+.userSaid img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-items: center;
+
+}
+.testimonialCard span .faIcon{
+    font-size: 6rem;
+}
+.testimonialCard h2{
+    width: 90%;
+    text-align: end;
+    margin-left: 10%;
+    color: #585858;
+}
+.testimonialCard h2 span{
+  background: var(--pri-color);
+  color: aliceblue;
+}
+.userSaid{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: start;
+}
+.userSaid .userDet{
+    margin-left: 10px;
+}
+.userDet p:nth-child(2){
+    font-style: italic;
+    opacity: .6;
+}
+}
+@media only screen and (min-width:1620px ){
+    h1{
+        font-size: 4.2rem;
+    }
+   
+  .heroLeftCont{
+    width: 610px;
+    
+    height: 80vh;
+    margin-left: calc(50vw - 612px);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.hlcPlacer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: calc(50vw - 612px);
+    height: 100%;
+}
+.xpsPlacer{
+    width: 1220px;
+}
+.mcPlacer,.saveCashPlacer,.Burner,.footerPlacer{
+    width: 1220px;
+}
+.saveCash{
+    height: 70vh;
+}
+}
+@media (min-width:993px) and (max-width:1024px) {
+.mcPlacerCards{
+    gap: 10px;
+}
+}

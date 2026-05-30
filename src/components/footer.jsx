@@ -1,58 +1,37 @@
+import logo from "../media/ndda-logo.png"
+import { useNavigate } from "react-router"
 function Footer(){
+    const navigate = useNavigate()
+    const toHome =()=>{
+        navigate("/")
+    }
+    const toDash =()=>{
+        navigate("/dashboard")
+    }
+    const toSupport =()=>{
+        navigate("/support")
+    }
+
     return (
         <footer>
             <div className="footerPlacer">
                 <div className="footerTop">
                     <div className="fLogo">
-                        <h3>NDDA</h3>
+                        <img src={logo} alt="" />
+   <p>Our mission is to empower individuals with the knowledge, skills, and confidence to become responsible, safe, and courteous drivers.</p>
                     </div>
                     <div className="footerLinks">
                         <div className="flLeft">
                             <div className="fLinkTitle">
-                                <p>Menu Links</p>
+                                <h2>Quick Links</h2>
                             </div>
                             <div className="flmLinks">
-                                     <p>Home</p>
-                            <p>My Certificate</p>
-                            <p>Course Modules</p>
+                                     <p onClick={toHome}>Home</p>
+                            <p onClick={toDash}>Course Modules</p>
+
                                 </div>
-
-                       
-
-
-
                         </div>
-                        <div className="flRight">
-                            <div className="fLinkTitle">
-                                <p>Navigation</p>
-                            </div>
-                            <div className="flmLinks">
- <p>About Us</p>
-                            <p>Feedback</p>
-                            <p>Contact Support</p>
-                            </div>
-                           
-
-                        </div>
-
                     </div>
-                    <div className="footerNewsletter">
- <div className="fLinkTitle">
-                                <p>Subsribe for Updates</p>
-                            </div>
-                            <p className="ltItron">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, cumque?</p>
-                            <div className="fnInputWrap">
-                                <div className="finput">
-                                    <input type="text" placeholder="Enter email"/>
-                                </div>
-                                <div className="finputBtn">
-                                     <p>Send</p>
-                                </div>
-                            </div>
-
-
-                    </div>
-
                 </div>
                 <div className="footerBtm">
                     <span>
