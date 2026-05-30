@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.372);
-    z-index: 5;
+    z-index: -5;
     position: fixed;
 }
 
@@ -98,5 +98,4 @@
 }
 .newcertDateSubUser{
         bottom: 14%;
-
 }
